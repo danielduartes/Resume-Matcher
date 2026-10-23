@@ -1,0 +1,100 @@
+Sobre a vaga
+Na byx, acreditamos que a tecnologia tem o poder de aproximar pessoas, impulsionar negócios e ampliar oportunidades.
+
+Construímos soluções que conectam renda, empresas e capital, tornando o mercado de crédito mais eficiente, seguro e escalável.
+
+Para isso, buscamos pessoas curiosas, protagonistas e apaixonadas por transformar ideias em oportunidades. Valorizamos profissionais que utilizam a Inteligência Artificial de forma ética e responsável para potencializar a criatividade, a produtividade e a capacidade de análise.
+
+Vem ser byx e conhecer mais sobre o desafio no time de Tecnologia.
+
+Principais responsabilidades
+
+Desenvolver e manter aplicações e APIs utilizando Python, com orientação do time técnico.
+Implementar funcionalidades e realizar correções em sistemas existentes.
+Apoiar integrações com sistemas internos, parceiros e serviços externos.
+Criar e ajustar consultas e estruturas em bancos de dados relacionais.
+Seguir boas práticas de desenvolvimento, organização de código e padrões definidos pelo time.
+Criar e manter testes automatizados, com apoio de profissionais mais experientes.
+Participar de revisões de código, recebendo feedbacks e aplicando melhorias.
+Apoiar a análise de logs e a investigação de problemas em aplicações.
+Utilizar ferramentas de versionamento e participar do fluxo de desenvolvimento e publicação de aplicações.
+Participar de refinamentos, estimativas e discussões técnicas com Produto e QA.
+Contribuir para a documentação de APIs, funcionalidades e fluxos.
+Buscar evolução técnica contínua, compartilhando dúvidas, aprendizados e conhecimentos com o time.
+
+Requisitos técnicos
+
+Conhecimento em Python e fundamentos de programação.
+Conhecimento básico de desenvolvimento backend utilizando frameworks como Django, FastAPI ou Flask.
+Conhecimento de criação e consumo de APIs REST.
+Noções de programação orientada a objetos, estruturas de dados e boas práticas de desenvolvimento.
+Conhecimento básico de bancos de dados relacionais, preferencialmente PostgreSQL ou MySQL.
+Conhecimento de SQL para consultas e manipulação de dados.
+Familiaridade com Git e controle de versão.
+Noções de testes unitários e testes de integração.
+Conhecimento básico de ambientes Linux e utilização de terminal.
+Capacidade de compreender códigos existentes e implementar melhorias com orientação.
+Interesse em aprender sobre arquitetura de software, segurança e qualidade de código.
+
+Diferenciais
+
+Experiência acadêmica, profissional ou em projetos pessoais utilizando Python.
+Conhecimento em Node.js ou desenvolvimento frontend.
+Noções de Redis, mensageria ou processamento assíncrono.
+Conhecimento básico de Docker e containers.
+Familiaridade com pipelines de CI/CD.
+Conhecimento introdutório de serviços em nuvem, preferencialmente AWS.
+Noções de microsserviços e arquitetura orientada a eventos.
+Familiaridade com ferramentas de observabilidade, logs e monitoramento.
+Conhecimento básico de segurança aplicada a APIs.
+Interesse ou vivência em fintechs, banking, crédito, meios de pagamento ou ambientes regulados.
+
+O que é bom ter:
+
+Vontade de aprender e desenvolver novas habilidades técnicas.
+Proatividade para investigar problemas e buscar soluções.
+Capacidade de receber feedbacks e aplicá-los no desenvolvimento profissional.
+Boa comunicação e facilidade para trabalhar em equipe.
+Organização e responsabilidade com as atividades assumidas.
+Curiosidade para compreender o funcionamento dos sistemas e as regras de negócio.
+Comprometimento com a qualidade das entregas e a evolução contínua.
+
+O que você pode esperar da gente?
+
+✔ Ambiente colaborativo, conhecimento compartilhado e conquistas celebradas.
+
+✔ Autonomia para propor, testar e transformar boas ideias em resultados.
+
+✔ Tecnologia e IA como aliadas para potencializar seu trabalho.
+
+✔ Aprendizado contínuo, desafios e oportunidades reais de crescimento.
+
+✔ Projetos estratégicos com impacto para clientes, parceiros e mercado.
+
+✔ Cultura guiada por inovação, protagonismo, execução, integridade, colaboração e impacto social.
+
+Nossos benefícios
+
+Vale refeição/alimentação flexível
+
+Plano de saúde
+
+Plano odontológico
+
+✅ Seguro de vida
+
+Vale transporte
+
+Gympass / Wellhub
+
+Sesc
+
+Auxílio creche
+
+Bônus
+
+Aqui, acreditamos que grandes transformações acontecem quando pessoas, tecnologia e propósito caminham juntos. Se você quer construir soluções que fazem a diferença, seu próximo desafio pode começar aqui.
+
+#vemserbyxer
+
+Nosso escritório fica localizado em São Paulo (SP), na região da Vila Olímpia.

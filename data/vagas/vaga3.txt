@@ -1,0 +1,70 @@
+Sobre a empresa
+Quem somos
+A MixRank processa petabytes de dados todos os meses por meio de rastreamento da web (web crawling). Centenas de clientes utilizam nossos produtos de dados, incluindo Google, Amazon, Facebook, Intel e Adobe, em áreas como Vendas, Marketing, Finanças e Segurança.
+
+Nossa equipe tem mais de 65 funcionários em tempo integral, trabalha totalmente de forma remota e está distribuída por mais de 20 países. Estamos em crescimento, somos lucrativos, pertencemos aos nossos próprios funcionários e não dependemos de financiamento externo. Candidatos de todas as regiões geográficas e origens são bem-vindos.
+
+A MixRank é liderada por Scott, matemático, programador, empreendedor e entusiasta de dados, que constrói e programa computadores desde os 11 anos. Ele pulou o ensino médio e ingressou na faculdade aos 14 anos, concluindo posteriormente um bacharelado em Matemática na Universidade da Califórnia em Berkeley (UC Berkeley) em quatro semestres, enquanto desenvolvia negócios paralelamente para pagar os estudos.
+
+Scott escreveu códigos utilizados por dezenas de milhões de pessoas e construiu sistemas que processaram centenas de petabytes de dados. Sua trajetória reflete a profunda curiosidade técnica, a intensidade e a mentalidade de quem gosta de construir coisas (builder mindset) que definem a cultura da MixRank.
+
+Estamos procurando pessoas apaixonadas, para quem programar não seja apenas um trabalho, mas algo que realmente amam fazer. Somos obcecados por computadores, programação, Big Data, bancos de dados, compiladores, hardware, matemática, ciência de dados e internet. Se você se identifica com isso, candidate-se para fazer parte da nossa equipe.
+Em que você vai trabalhar
+Estamos contratando engenheiros de software generalistas para atuar em diferentes áreas, incluindo aplicações web, mineração de dados, aprendizado de máquina e ciência de dados (machine learning/data science), transformação de dados e ETL, modelagem de dados, escalabilidade de bancos de dados, infraestrutura, DevOps e muito mais.
+
+Adaptaremos a função às áreas que melhor correspondam aos seus interesses.
+
+Nossa base de código (codebase) é receptiva a novos colaboradores. Você terá um ambiente de desenvolvimento totalmente funcional em poucas horas, e muitos engenheiros começam a contribuir rapidamente. As implantações em produção acontecem várias vezes por dia e são concluídas em menos de dois minutos.
+
+Praticamente toda a nossa base de código é escrita em Python, Rust, SQL, JavaScript/TypeScript e Nix. As principais tecnologias com as quais você precisará ter familiaridade para trabalhar de forma produtiva são Python, PostgreSQL, Linux e Git.
+
+Experiências que podem ser vantajosas incluem PostgreSQL, Python, Rust, Linux, TypeScript, Nix, desenvolvimento web front-end e back-end e mineração de dados.
+Por que o trabalho é interessante
+Operamos em uma escala maior do que a de startups comuns. Mantemos dois centros de dados (datacenters) com servidores de alto desempenho que nós mesmos construímos para lidar com os volumes de dados que processamos.
+
+Implementamos nosso próprio sistema de arquivos distribuído, executamos rastreamentos da web em larga escala e baixamos e realizamos análises estáticas de todo o universo de arquivos APK do Android e IPA do iOS que são publicados.
+
+Diferentemente de uma startup típica, na qual você pode passar metade do tempo em reuniões e a outra metade resolvendo tarefas no Jira, na MixRank você trabalhará com problemas técnicos difíceis que ajudarão você a evoluir como engenheiro.
+O que valorizamos nos engenheiros
+Temos especial interesse em engenheiros que sejam apaixonados por programação para além das suas atividades profissionais do dia a dia.
+
+Isso pode significar contribuir para projetos de código aberto (open source), desenvolver projetos pessoais por hobby, experimentar novas linguagens de programação, criar ferramentas para uso próprio ou explorar ideias técnicas simplesmente porque são interessantes.
+
+Muitos dos melhores engenheiros com quem trabalhamos são pessoas proativas e autodidatas: indivíduos que aprendem coisas novas por conta própria, seguem a própria curiosidade e gostam de resolver problemas difíceis de maneira independente.
+
+A experiência com linguagens de programação funcionais, como Haskell, OCaml, Lisp, Clojure, F# ou Scheme, pode ser um forte indicativo dessa curiosidade, embora não seja obrigatória.
+
+Como a MixRank trabalha inteiramente de forma remota e assíncrona, buscamos pessoas que se sintam confortáveis em assumir responsabilidades, comunicar-se claramente por escrito e progredir sem precisar de supervisão constante.
+
+Você não precisa ter uma trajetória profissional tradicional nem experiência com todas as tecnologias que utilizamos. O mais importante é que você realmente goste de programar, tenha interesse em aprender profundamente e se sinta motivado por problemas técnicos desafiadores.
+Como será sua adaptação à empresa
+Não acreditamos em um plano de integração (onboarding) igual para todos. Na MixRank, contratamos pessoas, não apenas títulos de cargos, e cada engenheiro traz uma trajetória, um ritmo de aprendizado e um conjunto de pontos fortes diferentes.
+
+Se você realmente ama programar, ofereceremos suporte enquanto você se familiariza com nossa base de código, nossos sistemas e nosso fluxo de trabalho de desenvolvimento.
+
+Alguns engenheiros começam a contribuir com mudanças relevantes muito rapidamente. Outros dedicam mais tempo a aprender a arquitetura, fazer perguntas e adquirir contexto antes de assumir tarefas maiores. Ambos os caminhos são bem-vindos.
+
+Nosso objetivo é ajudar você a se tornar confiante e produtivo de uma maneira que funcione para o seu perfil. Você terá acesso a colegas experientes, uma base de código acessível e um ambiente de desenvolvimento projetado para facilitar o início das contribuições de novos integrantes.
+Mentoria e suporte
+Se você estiver no início da sua carreira como engenheiro, não esperamos que compreenda tudo desde o primeiro dia.
+
+Você contará com o apoio de engenheiros experientes enquanto aprende a base de código, faz perguntas, analisa decisões técnicas e desenvolve confiança para trabalhar com sistemas complexos.
+
+Esse suporte pode incluir revisões de código (code reviews), explicações detalhadas sobre a arquitetura, depuração em conjunto (pair debugging) e aprofundamentos técnicos regulares em áreas como nosso sistema de arquivos distribuído, infraestrutura de rastreamento da web, pipelines de dados, escalabilidade do PostgreSQL e fluxo de implantação.
+
+Ainda valorizamos pessoas proativas que gostam de aprender de forma independente, especialmente em um ambiente remoto e assíncrono. Porém, ser independente não significa ficar sem suporte.
+
+Se você for uma pessoa curiosa, persistente e genuinamente apaixonada por programação, ajudaremos você a desenvolver, ao longo do tempo, a capacidade de assumir responsabilidades técnicas significativas.
+Candidatura
+Ao se candidatar a esta vaga, inclua seu currículo atualizado.
+
+O que vale destacar nessa vaga
+Pae, essa vaga parece especialmente interessante para quem gosta de programação de verdade, porque a empresa não exige experiência prévia com todas as tecnologias e enfatiza bastante o aprendizado, a autonomia e a mentoria.
+
+Alguns pontos importantes:
+- Tecnologias principais: Python, PostgreSQL, Linux e Git.
+- Experiência valorizada: projetos pessoais, contribuições open source e curiosidade para aprender tecnologias novas.
+- Experiência profissional: a descrição não estabelece um requisito explícito de anos de experiência.
+- Trabalho remoto: a equipe é internacional e trabalha de maneira assíncrona.
+- Perfil procurado: alguém que goste de resolver problemas técnicos complexos, aprenda por conta própria e saiba se comunicar por escrito.
+Considerando seu interesse em Python e IA, a vaga pode combinar com seu perfil. Entretanto, ela é mais ampla do que uma posição exclusivamente voltada a IA: também envolve infraestrutura, bancos de dados, sistemas distribuídos e engenharia de software.
