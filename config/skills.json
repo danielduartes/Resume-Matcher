@@ -1,0 +1,321 @@
+{
+  "skills": {
+    "python": [
+      "python"
+    ],
+    "sql": [
+      "sql"
+    ],
+    "pandas": [
+      "pandas"
+    ],
+    "numpy": [
+      "numpy"
+    ],
+    "scikit-learn": [
+      "scikit-learn",
+      "scikit learn",
+      "sklearn"
+    ],
+    "git": [
+      "git",
+      "versionamento de código",
+      "controle de versão"
+    ],
+    "postgresql": [
+      "postgresql",
+      "postgres"
+    ],
+    "linux": [
+      "linux"
+    ],
+    "rust": [
+      "rust"
+    ],
+    "javascript": [
+      "javascript"
+    ],
+    "typescript": [
+      "typescript"
+    ],
+    "nix": [
+      "nix"
+    ],
+    "linguagens funcionais": [
+      "haskell",
+      "ocaml",
+      "lisp",
+      "clojure",
+      "scheme",
+      "f#"
+    ],
+    "machine learning": [
+      "machine learning",
+      "aprendizado de máquina",
+      "aprendizado de maquina"
+    ],
+    "inteligência artificial": [
+      "inteligência artificial",
+      "inteligencia artificial"
+    ],
+    "ia generativa": [
+      "ia generativa",
+      "inteligência artificial generativa"
+    ],
+    "estatística": [
+      "estatística",
+      "estatistica",
+      "estatísticos",
+      "estatísticas"
+    ],
+    "análise exploratória": [
+      "análise exploratória",
+      "análises exploratórias",
+      "analise exploratoria"
+    ],
+    "análise de dados": [
+      "análise de dados",
+      "análises de dados"
+    ],
+    "ciência de dados": [
+      "ciência de dados",
+      "ciencia de dados",
+      "data science"
+    ],
+    "engenharia de dados": [
+      "engenharia de dados",
+      "data engineering"
+    ],
+    "regressão": [
+      "regressão",
+      "regressao"
+    ],
+    "classificação": [
+      "classificação",
+      "classificacao"
+    ],
+    "árvores de decisão": [
+      "árvores de decisão",
+      "árvore de decisão",
+      "arvores de decisao"
+    ],
+    "overfitting": [
+      "overfitting"
+    ],
+    "dashboards": [
+      "dashboard",
+      "dashboards"
+    ],
+    "business intelligence": [
+      "business intelligence"
+    ],
+    "quality assurance": [
+      "quality assurance"
+    ],
+    "web crawling": [
+      "web crawling",
+      "rastreamento da web"
+    ],
+    "mineração de dados": [
+      "mineração de dados",
+      "mineracao de dados",
+      "data mining"
+    ],
+    "banco de dados": [
+      "banco de dados",
+      "bancos de dados"
+    ],
+    "devops": [
+      "devops"
+    ],
+    "front-end": [
+      "front-end",
+      "frontend"
+    ],
+    "back-end": [
+      "back-end",
+      "backend"
+    ],
+    "mysql": [
+      "mysql"
+    ],
+    "matplotlib": [
+      "matplotlib"
+    ],
+    "seaborn": [
+      "seaborn"
+    ],
+    "power bi": [
+      "power bi",
+      "powerbi"
+    ],
+    "tableau": [
+      "tableau"
+    ],
+    "django": [
+      "django"
+    ],
+    "fastapi": [
+      "fastapi"
+    ],
+    "flask": [
+      "flask"
+    ],
+    "node.js": [
+      "node.js",
+      "nodejs",
+      "node js"
+    ],
+    "redis": [
+      "redis"
+    ],
+    "docker": [
+      "docker"
+    ],
+    "containers": [
+      "containers",
+      "container",
+      "contêineres"
+    ],
+    "aws": [
+      "aws",
+      "amazon web services"
+    ],
+    "nuvem": [
+      "nuvem",
+      "cloud"
+    ],
+    "ci/cd": [
+      "ci/cd",
+      "cicd"
+    ],
+    "rest": [
+      "rest",
+      "restful"
+    ],
+    "testes automatizados": [
+      "testes automatizados",
+      "teste automatizado"
+    ],
+    "testes unitários": [
+      "testes unitários",
+      "teste unitário"
+    ],
+    "testes de integração": [
+      "testes de integração",
+      "teste de integração"
+    ],
+    "microsserviços": [
+      "microsserviços",
+      "microsserviço",
+      "microservices"
+    ],
+    "arquitetura orientada a eventos": [
+      "arquitetura orientada a eventos",
+      "orientada a eventos"
+    ],
+    "mensageria": [
+      "mensageria"
+    ],
+    "processamento assíncrono": [
+      "processamento assíncrono"
+    ],
+    "observabilidade": [
+      "observabilidade"
+    ],
+    "monitoramento": [
+      "monitoramento"
+    ],
+    "logs": [
+      "logs"
+    ],
+    "segurança": [
+      "segurança"
+    ],
+    "terminal": [
+      "terminal"
+    ],
+    "programação orientada a objetos": [
+      "programação orientada a objetos",
+      "orientação a objetos"
+    ],
+    "estruturas de dados": [
+      "estruturas de dados",
+      "estrutura de dados"
+    ],
+    "engenharia de software": [
+      "engenharia de software",
+      "software engineering"
+    ]
+  },
+  "siglas": {
+    "machine learning": [
+      "ML"
+    ],
+    "inteligência artificial": [
+      "IA",
+      "AI"
+    ],
+    "llm": [
+      "LLM",
+      "LLMs"
+    ],
+    "rag": [
+      "RAG"
+    ],
+    "etl": [
+      "ETL"
+    ],
+    "api": [
+      "API",
+      "APIs"
+    ],
+    "business intelligence": [
+      "BI"
+    ],
+    "quality assurance": [
+      "QA"
+    ]
+  },
+  "equivalencias": {
+    "sql": {
+      "premissas": [
+        "mysql",
+        "postgresql"
+      ],
+      "tipo": "inferido",
+      "motivo": "MySQL e PostgreSQL são bancos de dados SQL"
+    },
+    "numpy": {
+      "premissas": [
+        "pandas",
+        "scikit-learn"
+      ],
+      "tipo": "inferido",
+      "motivo": "Pandas e Scikit-learn são construídos sobre NumPy"
+    },
+    "análise exploratória": {
+      "premissas": [
+        "análise de dados",
+        "ciência de dados"
+      ],
+      "tipo": "inferido",
+      "motivo": "análise e ciência de dados com Python envolve análise exploratória"
+    },
+    "overfitting": {
+      "premissas": [
+        "machine learning"
+      ],
+      "tipo": "inferido",
+      "motivo": "conceito básico de qualquer trabalho com Machine Learning"
+    },
+    "dashboards": {
+      "premissas": [
+        "matplotlib",
+        "seaborn"
+      ],
+      "tipo": "relacionado",
+      "motivo": "o currículo tem visualização de dados, mas não ferramentas de dashboard/BI"
+    }
+  }
+}

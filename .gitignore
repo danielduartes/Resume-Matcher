@@ -7,3 +7,9 @@ env/
 .ipynb_checkpoints/
 .vscode/
 .idea/
+entrada/curriculo/
+relatorios/
+entrada/vagas/
+entrada/vagas_limpas/
+config/candidatos.json
+config/ignorados.json

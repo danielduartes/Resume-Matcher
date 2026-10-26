@@ -1,0 +1,36 @@
+{
+  "treino": {
+    "vaga1.txt": [
+      "python", "sql", "pandas", "numpy", "scikit-learn",
+      "machine learning", "inteligência artificial", "ia generativa", "llm", "rag", "agentes",
+      "estatística", "análise de dados", "análise exploratória", "ciência de dados",
+      "regressão", "classificação", "árvores de decisão", "overfitting",
+      "dashboards", "business intelligence", "quality assurance", "git", "api"
+    ],
+    "vaga3.txt": [
+      "python", "sql", "postgresql", "linux", "git", "rust", "javascript", "typescript", "nix",
+      "linguagens funcionais", "machine learning", "ciência de dados", "mineração de dados",
+      "etl", "banco de dados", "modelagem de dados", "devops", "front-end", "back-end"
+    ],
+    "vaga4.txt": [
+      "python", "django", "fastapi", "flask", "back-end", "api", "rest",
+      "programação orientada a objetos", "estruturas de dados",
+      "banco de dados", "postgresql", "mysql", "sql", "git",
+      "testes automatizados", "testes unitários", "testes de integração",
+      "linux", "terminal", "logs", "node.js", "front-end", "redis", "mensageria",
+      "processamento assíncrono", "docker", "containers", "ci/cd", "aws", "nuvem",
+      "microsserviços", "arquitetura orientada a eventos", "observabilidade",
+      "monitoramento", "segurança"
+    ]
+  },
+  "teste": {
+    "vaga6.txt": [
+      "llm", "inteligência artificial", "agentes", "gestão de acessos",
+      "gestão de skills", "benchmark", "segurança"
+    ],
+    "vaga7.txt": [
+      "excel", "pacote office", "análise de dados", "dashboards",
+      "visualização de dados", "automação de processos"
+    ]
+  }
+}

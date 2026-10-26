@@ -1,127 +1,106 @@
-# O NER do spaCy não consegue identificar bem o que são as skills em um currículo ou os requisitos em uma vaga. Para corrigir isso, criamos um arquivo para mostramos ao nosso NER siglas e palavras que são classificadas como skills. 
+# Dicionário de habilidades e funções de extração e comparação.
+# O NER do spaCy não reconhece habilidades técnicas, então usamos um PhraseMatcher que procura
+# os termos listados em config/skills.json (skills, siglas e equivalências).
 
-import spacy
-from spacy.matcher import PhraseMatcher
+import json
 from pathlib import Path
+from spacy.matcher import PhraseMatcher
 
-# Dicionário de skills => "nome padronizado": "lista com formas em que a palavra pode ser escrita"
-SKILLS = {
-    "python": ["python"],
-    "sql": ["sql"],
-    "pandas": ["pandas"],
-    "numpy": ["numpy"],
-    "scikit-learn": ["scikit-learn", "scikit learn", "sklearn"],
-    "git": ["git", "versionamento de código", "controle de versão"],
-    "postgresql": ["postgresql", "postgres"],
-    "linux": ["linux"],
-    "rust": ["rust"],
-    "javascript": ["javascript"],
-    "typescript": ["typescript"],
-    "nix": ["nix"],
-    "linguagens funcionais": ["haskell", "ocaml", "lisp", "clojure", "scheme", "f#"],
-    "machine learning": ["machine learning", "aprendizado de máquina", "aprendizado de maquina"],
-    "inteligência artificial": ["inteligência artificial", "inteligencia artificial"],
-    "ia generativa": ["ia generativa", "inteligência artificial generativa"],
-    "estatística": ["estatística", "estatistica", "estatísticos", "estatísticas"],
-    "análise exploratória": ["análise exploratória", "análises exploratórias", "analise exploratoria"],
-    "análise de dados": ["análise de dados", "análises de dados"],
-    "ciência de dados": ["ciência de dados", "ciencia de dados", "data science"],
-    "engenharia de dados": ["engenharia de dados", "data engineering"],
-    "regressão": ["regressão", "regressao"],
-    "classificação": ["classificação", "classificacao"],
-    "árvores de decisão": ["árvores de decisão", "árvore de decisão", "arvores de decisao"],
-    "overfitting": ["overfitting"],
-    "dashboards": ["dashboard", "dashboards"],
-    "business intelligence": ["business intelligence"],
-    "quality assurance": ["quality assurance"],
-    "web crawling": ["web crawling", "rastreamento da web"],
-    "mineração de dados": ["mineração de dados", "mineracao de dados", "data mining"],
-    "banco de dados": ["banco de dados", "bancos de dados"],
-    "devops": ["devops"],
-    "front-end": ["front-end", "frontend"],
-    "back-end": ["back-end", "backend"],
-    "mysql": ["mysql"],
-    "matplotlib": ["matplotlib"],
-    "seaborn": ["seaborn"],
-    "power bi": ["power bi", "powerbi"],
-    "tableau": ["tableau"]
-}
+CAMINHO = Path(__file__).parent / "config" / "skills.json"
+PRIORIDADE = ["REQUISITO", "DIFERENCIAL", "RESPONSABILIDADE", "OUTRO"]
 
-# Algumas palavras conseguem ser abreviadas então criamos um dicionário que possuem apenas essas palavras.
-SIGLAS = {
-    "machine learning": ["ML"],
-    "inteligência artificial": ["IA", "AI"],
-    "llm": ["LLM", "LLMs"],
-    "rag": ["RAG"],
-    "etl": ["ETL"],
-    "api": ["API", "APIs"],
-    "business intelligence": ["BI"],
-    "quality assurance": ["QA"],
-}
 
-# 
-INFERENCIAS = {
-    "sql": {
-        "premissas": ["mysql", "postgresql"],
-        "tipo": "inferido",
-        "motivo": "MySQL e PostgreSQL são bancos de dados SQL",
-    },
-    "numpy": {
-        "premissas": ["pandas", "scikit-learn"],
-        "tipo": "inferido",
-        "motivo": "Pandas e Scikit-learn são construídos sobre NumPy",
-    },
-    "análise exploratória": {
-        "premissas": ["análise de dados"],
-        "tipo": "inferido",
-        "motivo": "análise de dados com Python envolve análise exploratória",
-    },
-    "overfitting": {
-        "premissas": ["machine learning"],
-        "tipo": "inferido",
-        "motivo": "conceito básico de qualquer trabalho com Machine Learning",
-    },
-    "dashboards": {
-        "premissas": ["matplotlib", "seaborn"],
-        "tipo": "relacionado",
-        "motivo": "o currículo tem visualização de dados, mas não ferramentas de dashboard/BI",
-    },
-}
+def validar(dados):
+    """Confere o JSON e levanta erro listando tudo o que estiver errado."""
+    nomes = set(dados["skills"]) | set(dados["siglas"])
+    problemas = []
 
-# Função que ensina aos matchers as possíveis skills que podem aparecer
-def construir_matchers(nlp): # recebe como parâmetro o objeto do spaCy que foi criado
-    # O 'PhraseMatcher' recebe uma lista de termos e ao receber um texto retorna a posição de cada palavra que aparece tanto na lista quanto no texto.
-    # Foram criados dois, um para comparar o texto em letras minúsculas caso palavras sejam escritas com letra maiúscula e poderia fazer o matcher não reconhecer, e outro que lê normalmente para encontrar siglas que geralmente são escritas sempre em letras maiúsculas.
-    matcher_skills = PhraseMatcher(nlp.vocab, attr="LOWER")  # ignora as maiúsculas
-    matcher_siglas = PhraseMatcher(nlp.vocab)                # respeita as maiúsculas
-    for skill, variantes in SKILLS.items(): 
-        matcher_skills.add(skill, [nlp.make_doc(v) for v in variantes]) # registra no matcher as skills do dicionário e todas as suas formas possíveis de escrita
-    for skill, variantes in SIGLAS.items(): 
-        matcher_siglas.add(skill, [nlp.make_doc(v) for v in variantes]) # registra no matcher as siglas do dicionário e suas formas de escrita
-    return matcher_skills, matcher_siglas # retorna os dois matchers
+    for secao in ("skills", "siglas"):
+        for nome, variantes in dados[secao].items():
+            if not variantes:
+                problemas.append(f"{secao}: '{nome}' está sem variantes")
 
-# Função utilizada para identificar as skills ou requisitos de um texto
-def extrair_habilidades(texto, nlp, matcher_skills, matcher__siglas): # recebe o texto a ser analisado, o objeto dos spaCy e os matchers criados anteriormente 
-    doc = nlp(texto) # o NLP recebe o texto (vaga ou currículo) e divide ele em tokens, retornando um Doc
-    achadas = {}   # dicionário que vai armazenar as skills ou requisitos identificados {"nome padronizado": "forma que foi escrita"}
-    for matcher in (matcher_skills, matcher__siglas): # percorre o texto duas vezes, com o matcher de skills e com o de siglas
-        for match_id, inicio, fim in matcher(doc):# procura no texto todos os padrões encontrados e retorna uma lista de ocorrências
-            skill = nlp.vocab.strings[match_id] # converte o 'match_id' (código interno das string) em sua forma textual
-            achadas.setdefault(skill, []).append(doc[inicio:fim].text)
+    for requisito, regra in dados["equivalencias"].items():
+        if requisito not in nomes:
+            problemas.append(f"equivalência '{requisito}' não existe em skills/siglas")
+        for pista in regra["premissas"]:
+            if pista not in nomes:
+                problemas.append(f"'{requisito}': a pista '{pista}' não existe em skills/siglas")
+        if regra["tipo"] not in ("inferido", "relacionado"):
+            problemas.append(f"'{requisito}': tipo '{regra['tipo']}' inválido")
+
+    if problemas:
+        raise ValueError("Problemas no skills.json:\n- " + "\n- ".join(problemas))
+
+
+def carregar_dados(caminho=CAMINHO):
+    """Lê o JSON, valida e devolve (SKILLS, SIGLAS, SE_TEM_ENTAO_TEM)."""
+    with open(caminho, encoding="utf-8") as f:
+        dados = json.load(f)
+    validar(dados)
+    return dados["skills"], dados["siglas"], dados["equivalencias"]
+
+
+SKILLS, SIGLAS, SE_TEM_ENTAO_TEM = carregar_dados()
+
+
+def construir_matchers(nlp):
+    """
+    Prepara os dois matchers que vão procurar habilidades nos textos (não lê nenhum texto).
+    - matcher_skills: compara em minúsculas (Python = python = PYTHON)
+    - matcher_siglas: exige a grafia exata, para não confundir "ia" (verbo) com "IA" (sigla)
+    """
+    matcher_skills = PhraseMatcher(nlp.vocab, attr="LOWER")
+    matcher_siglas = PhraseMatcher(nlp.vocab)
+    for skill, variantes in SKILLS.items():
+        matcher_skills.add(skill, [nlp.make_doc(v) for v in variantes])  # nome padronizado + todas as formas de escrever
+    for skill, variantes in SIGLAS.items():
+        matcher_siglas.add(skill, [nlp.make_doc(v) for v in variantes])
+    return matcher_skills, matcher_siglas
+
+
+def extrair_habilidades(texto, nlp, matcher_skills, matcher_siglas):
+    """Acha as habilidades do dicionário num texto. Devolve {nome padronizado: [trechos como estavam escritos]}."""
+    doc = nlp(texto)  # divide o texto em tokens
+    achadas = {}
+    for matcher in (matcher_skills, matcher_siglas):  # um passe com cada matcher
+        for match_id, inicio, fim in matcher(doc):
+            skill = nlp.vocab.strings[match_id]  # código interno -> nome da habilidade
+            achadas.setdefault(skill, []).append(doc[inicio:fim].text)  # cria a lista na primeira vez e guarda o trecho
     return achadas
 
 
 def classificar(skills_vaga, skills_cv):
+    """
+    Compara os requisitos de UMA vaga com as habilidades do currículo (os dois são conjuntos de nomes).
+    Devolve quatro listas: cobertos, inferidos, relacionados e ausentes.
+    """
     resultado = {"cobertos": [], "inferidos": [], "relacionados": [], "ausentes": []}
-    for skill in sorted(skills_vaga):
+    for skill in sorted(skills_vaga):  # cada requisito da vaga
         if skill in skills_cv:
-            resultado["cobertos"].append(skill)
+            resultado["cobertos"].append(skill)  # o currículo tem a skill escrita
             continue
-        regra = INFERENCIAS.get(skill)
-        achadas = [p for p in regra["premissas"] if p in skills_cv] if regra else []
+        regra = SE_TEM_ENTAO_TEM.get(skill)  # regra com as skills do currículo que valem como este requisito (None se não houver)
+        achadas = [p for p in regra["premissas"] if p in skills_cv] if regra else []  # pistas da regra que o currículo tem
         if achadas:
             chave = "inferidos" if regra["tipo"] == "inferido" else "relacionados"
-            resultado[chave].append((skill, achadas, regra["motivo"]))
+            resultado[chave].append((skill, achadas, regra["motivo"]))  # requisito, pistas achadas e explicação
         else:
-            resultado["ausentes"].append(skill)
+            resultado["ausentes"].append(skill)  # sem a skill escrita e sem nenhuma pista
+    return resultado
+
+
+def extrair_com_secao(texto, nlp, matcher_skills, matcher_siglas):
+    """Devolve {habilidade: seção mais forte onde ela apareceu}, lendo os marcadores SECAO_ deixados pela limpeza."""
+    secao = "OUTRO"
+    resultado = {}
+    for linha in texto.splitlines():
+        l = linha.strip()
+        if l.startswith("SECAO_") and " " not in l:
+            secao = l.replace("SECAO_", "")
+            continue
+        for skill in extrair_habilidades(l, nlp, matcher_skills, matcher_siglas):
+            atual = resultado.get(skill)
+            if atual is None or PRIORIDADE.index(secao) < PRIORIDADE.index(atual):
+                resultado[skill] = secao
     return resultado
